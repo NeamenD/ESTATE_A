@@ -1,0 +1,22 @@
+// responsive.scss
+
+@mixin lg {
+  @media (min-width: 1200px) {
+    // Define the large screen breakpoint
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) and (max-width: 1199px) {
+    // Define the medium screen breakpoint
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 767px) {
+    // Define the small screen breakpoint
+    @content;
+  }
+}
