@@ -1,7 +1,7 @@
 @import "./responsive.scss"; // Import the responsive SCSS file containing mixins
 
 .layout {
-  background-color: rebeccapurple; // Default background color
+  //   background-color: rebeccapurple; // Default background color
   height: 100vh; // Full viewport height
   max-width: 1366px; // Maximum width of the layout
   margin-left: auto; // Center horizontally
@@ -11,16 +11,19 @@
 
   // Background color changes for large screens (assumed breakpoint defined in responsive.scss)
   @include lg {
-    background-color: rgb(204, 167, 0); // Mustard yellow for large screens
+    background-color: rgb(247, 210, 196); // Mustard yellow for large screens
+    max-width: 1280px;
   }
 
   // Background color changes for medium screens (assumed breakpoint defined in responsive.scss)
   @include md {
-    background-color: rgb(0, 26, 255); // Blue for medium screens
+    background-color: rgb(186, 203, 234); // Blue for medium screens
+    max-width: 768px;
   }
 
   // Background color changes for small screens (assumed breakpoint defined in responsive.scss)
   @include sm {
-    background-color: red; // Red for small screens
+    background-color: rgb(239, 200, 200); // Red for small screens
+    max-width: 640px;
   }
 }

@@ -1,8 +1,11 @@
+import Navbar from "./components/Navbar";
 import "./layout.scss";
 function App() {
   return (
     <>
-      <div className="layout">Hello</div>
+      <div className="layout">
+        <Navbar />
+      </div>
     </>
   );
 }
