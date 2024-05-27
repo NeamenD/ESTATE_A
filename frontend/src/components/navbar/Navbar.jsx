@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav>
       <div className="left">
         <a href="/" className="logo">
-          <img src="../../../public/img/GOJO-removebg-preview.png" alt="Logo" />
+          <img src="img/GOJO-removebg-preview.png" alt="Logo" />
           {/* <span>GOJO</span> */}
         </a>
         <a href="/">Home</a>
@@ -22,7 +22,7 @@ export default function Navbar() {
         </a>
         <div className="menuIcon">
           <img
-            src="../../../public/img/menu.png"
+            src="img/menu.png"
             alt="Menu bar icons"
             onClick={() => setOpen((prev) => !prev)}
           />
