@@ -11,8 +11,7 @@ export default function HomePage() {
             Discover the perfect home with our extensive real estate listings.
             Whether you're looking for a cozy apartment in the city or a
             spacious house in the suburbs, we have options to suit every
-            preference and budget. Our experienced agents are here to help you
-            navigate the market and find the property that fits your lifestyle.
+            preference and budget. Our experienced agents are here to help.
             Start your journey to owning your dream place today!
           </p>
           <SearchBar />
