@@ -1,3 +1,4 @@
+import "./filter.scss";
 function Filter() {
   return (
     <div className="filter">
@@ -18,6 +19,7 @@ function Filter() {
           <div className="item">
             <label htmlFor="type">Type:</label>
             <select name="type" id="type">
+              <option value="any">any</option>
               <option value="buy">Buy</option>
               <option value="rent">Rent</option>
             </select>
@@ -26,6 +28,7 @@ function Filter() {
           <div className="item">
             <label htmlFor="property">Property</label>
             <select name="property" id="property">
+              <option value="any">any</option>
               <option value="apartment">Apartment</option>
               <option value="apartment">Home</option>
               <option value="apartment">Condo</option>
@@ -34,37 +37,37 @@ function Filter() {
           </div>
 
           <div className="item">
-            <label htmlFor="city">Location</label>
+            <label htmlFor="minPrice">Min Price</label>
             <input
-              type="text"
-              id="city"
-              name="city"
-              placeholder="City Location"
+              type="number"
+              id="minPrice"
+              name="minPrice"
+              placeholder="any"
             />
           </div>
 
           <div className="item">
-            <label htmlFor="city">Location</label>
+            <label htmlFor="maxPrice">Max Price</label>
             <input
-              type="text"
-              id="city"
-              name="city"
-              placeholder="City Location"
+              type="number"
+              id="maxPrice"
+              name="maxPrice"
+              placeholder="any"
             />
           </div>
 
           <div className="item">
-            <label htmlFor="city">Location</label>
+            <label htmlFor="Bedroom">Bedroom</label>
             <input
-              type="text"
-              id="city"
-              name="city"
-              placeholder="City Location"
+              type="number"
+              id="Bedroom"
+              name="Bedroom"
+              placeholder="any"
             />
           </div>
 
           <button>
-            <img src="/search.png" alt="" />
+            <img src="/img/search.png" alt="" />
           </button>
         </div>
       </h1>
