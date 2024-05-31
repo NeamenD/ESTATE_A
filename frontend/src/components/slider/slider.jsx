@@ -2,17 +2,33 @@ import { useState } from "react";
 import "./slider.scss";
 function Slider({ images }) {
   const [imageIndex, setImageIndex] = useState(null);
+  const changeSlide = (direction) => {
+    if (direction === "left") {
+      if (imageIndex === 0) {
+        setImageIndex(images.length - 1);
+      } else {
+        setImageIndex(imageIndex - 1);
+      }
+    } else if (direction === "right") {
+      if (imageIndex === images.length - 1) {
+        setImageIndex(0);
+      } else {
+        setImageIndex(imageIndex + 1);
+      }
+    }
+  };
+
   return (
     <div className="slider">
       {imageIndex !== null && (
         <div className="fullSlider">
-          <div className="arrow">
+          <div className="arrow" onClick={() => changeSlide("left")}>
             <img src="/img/arrow.png" alt="" />
           </div>
           <div className="imgContainer">
             <img src={images[imageIndex]} alt="" />
           </div>
-          <div className="arrow">
+          <div className="arrow" onClick={() => changeSlide("left")}>
             <img src="/img/arrow.png" className="right" alt="" />
           </div>
           <div className="close" onClick={() => setImageIndex(null)}>
@@ -29,7 +45,7 @@ function Slider({ images }) {
             src={image}
             alt=""
             key={index}
-            onClick={() => setImageIndex(index)}
+            onClick={() => setImageIndex(index + 1)}
           />
         ))}
       </div>
