@@ -25,11 +25,31 @@
             align-items: center;
             color: #888;
             font-size: 14px;
+
+            img {
+              width: 16px;
+              height: 16px;
+            }
           }
           .price {
+            padding: 5px;
+            background-color: rgba(254, 205, 81, 0.438);
+            width: max-content;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 300;
           }
         }
         .user {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          padding: 0px 50px;
+          border-radius: 10px;
+          background-color: rgba(256, 205, 81, 0.209);
+          font-weight: 600;
           img {
             width: 50px;
             height: 50px;
@@ -39,6 +59,9 @@
         }
       }
       .bottom {
+        margin-top: 50px;
+        color: #555;
+        line-height: 20px;
       }
     }
   }
