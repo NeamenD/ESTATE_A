@@ -2,6 +2,7 @@ import "./singlePage.scss";
 import Slider from "../../components/slider/slider";
 
 import { singlePostData, userData } from "../../components/lib/dummydata";
+import Map from "../../components/map/Map";
 
 function SinglePage() {
   return (
@@ -29,7 +30,47 @@ function SinglePage() {
         </div>
       </div>
       <div className="features">
-        <div className="wrapper"></div>
+        <div className="wrapper">
+          <p className="title">General</p>
+          <div className="listVertical">
+            <div className="feature">
+              <img src="/img/utility.png" alt="" />
+              <span>Utilities</span>
+              <p>Renter is responsible</p>
+            </div>
+
+            <div className="feature">
+              <img src="/img/pet.png" alt="" />
+              <span>Pet policy</span>
+              <p>Pets Allowed</p>
+            </div>
+
+            <div className="feature">
+              <img src="/img/fee.png" alt="" />
+              <span>Property Fees</span>
+              <p>Must have 3x the rent in total household income</p>
+            </div>
+          </div>
+          <p className="title">Sizes</p>
+          <div className="sizes"></div>
+          <p className="title">Nearby Places</p>
+          <div className="listHorizontal"> </div>
+          <p className="title">Location</p>
+          <div className="mapContainer">
+            <Map items={[singlePostData]} />
+          </div>
+          <div className="buttons">
+            <button>
+              <img src="/img/chat.png" alt="" />
+              Send a Message
+            </button>
+
+            <button>
+              <img src="/img/save.png" alt="" />
+              Save the Place
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
