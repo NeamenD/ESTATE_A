@@ -22,7 +22,10 @@ export default function Navbar() {
           <div className="user">
             <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
             <span>John Doe</span>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile" className="profile">
+              <div className="notification">3</div>
+              <span>Profile</span>
+            </Link>
           </div>
         ) : (
           <>
