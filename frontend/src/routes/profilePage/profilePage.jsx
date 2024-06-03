@@ -1,9 +1,9 @@
 import List from "../../components/list/list";
+import "./profilePage.scss";
 
 function profilePage() {
   return (
-    <div>
-      profilePage
+    <div className="profilePage">
       <div className="details">
         <div className="wrapper">
           <div className="title">
