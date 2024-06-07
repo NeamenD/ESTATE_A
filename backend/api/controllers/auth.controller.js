@@ -50,6 +50,7 @@ export const login = async (req, res) => {
 
     const age = 1000 * 60 * 60 * 24 * 7; //1week
     const token = jwt.sign(
+      //creating token using secret key
       {
         id: user.id,
       },
