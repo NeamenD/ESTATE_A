@@ -23,7 +23,7 @@ export const register = async (req, res) => {
     console.log(newUser);
     res.status(200).json({ message: "User crated successfully" });
   } catch (error) {
-    console.log(error);
+    console.log("Error during user registration:", error);
     res.status(500).json({ message: "Failed to create user!" });
   }
 
@@ -48,7 +48,7 @@ export const login = async (req, res) => {
 
     // res.setHeader("Set-Cookie", "test=" + "myValue").json("success");
 
-    const age = 1000 * 60 * 60 * 24 * 7;
+    const age = 1000 * 60 * 60 * 24 * 7; //1week
     const token = jwt.sign(
       {
         id: user.id,
@@ -56,6 +56,8 @@ export const login = async (req, res) => {
       process.env.JWT_SECRET_KEY,
       { expiresIn: age }
     );
+    // Exclude the password from the user info
+    const { password: _, ...userinfo } = user;
     res
       .cookie("token", token, {
         httpOnly: true,
@@ -63,10 +65,10 @@ export const login = async (req, res) => {
         maxAge: age,
       })
       .status(200)
-      .json({ message: "Login successful" });
+      .json(userinfo);
     //generate cookie token and send to user
   } catch (error) {
-    console.log(error);
+    console.log("Error during login:", error);
     res.status(500).json({ message: "Failed to login!" });
   }
 };
