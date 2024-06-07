@@ -25,6 +25,7 @@ function profilePage() {
             <span>
               Username: <b>john@gmail.com</b>
             </span>
+            <button>Logout</button>
           </div>
 
           <div className="title">
