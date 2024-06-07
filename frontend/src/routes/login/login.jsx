@@ -1,10 +1,13 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
+import "./login.scss";
+// import axios from "axios";
+import apiRequest from "../../components/lib/apiRequest";
 
 function Login() {
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); //wait after button click
   // const { updateUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -24,8 +27,7 @@ function Login() {
         password,
       });
 
-      updateUser(res.data);
-
+      localStorage.setItem("user", JSON.stringify(res.data));
       navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
@@ -61,7 +63,7 @@ function Login() {
         </form>
       </div>
       <div className="imgContainer">
-        <img src="/bg.png" alt="Background" />
+        <img src="/img/chuttersnap-awL_YCtPGv4-unsplash.jpg" alt="Background" />
       </div>
     </div>
   );
