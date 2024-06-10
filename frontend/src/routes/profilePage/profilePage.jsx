@@ -4,7 +4,7 @@ import Chat from "../../components/chat/chat";
 import apiRequest from "../../components/lib/apiRequest";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContex";
+import { AuthContext } from "../../context/AuthContext";
 function profilePage() {
   const { updateUser, currentUser } = useContext(AuthContext);
   const navigate = useNavigate();

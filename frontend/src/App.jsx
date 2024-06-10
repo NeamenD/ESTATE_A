@@ -47,6 +47,10 @@ function App() {
           path: "/profile",
           element: <ProfilePage />,
         },
+        {
+          path: "/profile/update",
+          element: <ProfileUpdatePage />,
+        },
 
         {
           path: "/add",

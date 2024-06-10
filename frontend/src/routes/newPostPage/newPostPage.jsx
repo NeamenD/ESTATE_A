@@ -3,6 +3,7 @@ import "./newPostPage.scss";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import apiRequest from "../../components/lib/apiRequest";
+import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 function NewPostPage() {
   const [value, setValue] = useState("");
@@ -146,13 +147,24 @@ function NewPostPage() {
               <label htmlFor="restaurant">Restaurant</label>
               <input min={0} id="restaurant" name="restaurant" type="number" />
             </div>
-            <button className="sendButton">Add</button>
+            <button className="sendButton">Update</button>
             {error && <span>error</span>}
           </form>
         </div>
       </div>
       <div className="sideContainer"></div>
-      <UploadWidget />
+      {images.map((image, index) => (
+        <img src={image} key={index} alt="" />
+      ))}
+      <UploadWidget
+        uwConfig={{
+          multiple: true,
+          cloudName: "dtepnrlno",
+          uploadPreset: "estate",
+          folder: "posts",
+        }}
+        setState={setImages}
+      />
     </div>
   );
 }

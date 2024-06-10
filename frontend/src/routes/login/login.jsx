@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./login.scss";
 // import axios from "axios";
 import apiRequest from "../../components/lib/apiRequest";
-import { AuthContext } from "../../context/AuthContex";
+import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
   const [error, setError] = useState("");
