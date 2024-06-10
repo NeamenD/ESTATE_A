@@ -38,7 +38,7 @@ function profilePage() {
               Username: <b>{currentUser.username}</b>
             </span>
             <span>
-              Username: <b>{currentUser.email}</b>
+              Email: <b>{currentUser.email}</b>
             </span>
             <button onClick={handleLogout}>Logout</button>
           </div>
