@@ -4,6 +4,7 @@ import Slider from "../../components/slider/slider";
 import { singlePostData, userData } from "../../components/lib/dummydata";
 import Map from "../../components/map/Map";
 import { useLoaderData } from "react-router-dom";
+import DOMPurify from "dompurify";
 
 function SinglePage() {
   const post = useLoaderData();
@@ -28,7 +29,12 @@ function SinglePage() {
                 <span>{post.user.username}</span>
               </div>
             </div>
-            <div className="bottom">{post.postDetail.description}</div>
+            <div
+              className="bottom"
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(post.postDetail.desc),
+              }}
+            ></div>
           </div>
         </div>
       </div>
@@ -118,7 +124,7 @@ function SinglePage() {
           </div>
           <p className="title">Location</p>
           <div className="mapContainer">
-            <Map items={[singlePostData]} />
+            <Map items={[post]} />
           </div>
           <div className="buttons">
             <button>

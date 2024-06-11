@@ -4,10 +4,12 @@ import "leaflet/dist/leaflet.css";
 import Pin from "../pin/pin";
 
 function Map({ items }) {
-  const position = [51.505, -0.09]; // Denver, Colorado
+  const position = [39.7392, -104.9903]; // Denver, Colorado
   return (
     <MapContainer
-      center={position}
+      center={
+        items.length === 1 ? [items[0].latitude, items[0].longitude] : position
+      }
       zoom={7}
       scrollWheelZoom={false}
       className="map"
