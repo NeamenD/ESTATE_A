@@ -1,14 +1,32 @@
 import "./singlePage.scss";
 import Slider from "../../components/slider/slider";
 
-import { singlePostData, userData } from "../../components/lib/dummydata";
+// import { singlePostData, userData } from "../../components/lib/dummydata";
 import Map from "../../components/map/Map";
-import { useLoaderData } from "react-router-dom";
+import { useNavigate,useLoaderData } from "react-router-dom";
 import DOMPurify from "dompurify";
+import { useContext } from "react";
+import apiRequest from "../../lib/apiRequest"
+import{AuthContext} from "../../context/AuthContext"
 
 function SinglePage() {
   const post = useLoaderData();
-  console.log(post);
+  
+  const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const async ()=>{
+    if(!currentUser){
+      navigate("/login");
+    }
+    try {
+      await apiRequest.post("/users/save", {postId: post.id})
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+
+  }
   return (
     <div className="singlePage">
       <div className="details">
@@ -132,7 +150,7 @@ function SinglePage() {
               Send a Message
             </button>
 
-            <button>
+            <button onClick={handleSave}>
               <img src="/img/save.png" alt="" />
               Save the Place
             </button>
