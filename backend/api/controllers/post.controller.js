@@ -56,8 +56,8 @@ export const addPost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
   try {
-  } catch (error) {
     res.status(200).json();
+  } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Failed to update posts" });
   }
