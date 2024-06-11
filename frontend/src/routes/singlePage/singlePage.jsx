@@ -3,29 +3,32 @@ import Slider from "../../components/slider/slider";
 
 import { singlePostData, userData } from "../../components/lib/dummydata";
 import Map from "../../components/map/Map";
+import { useLoaderData } from "react-router-dom";
 
 function SinglePage() {
+  const post = useLoaderData();
+  console.log(post);
   return (
     <div className="singlePage">
       <div className="details">
         <div className="wrapper">
-          <Slider images={singlePostData.images} />
+          <Slider images={post.images} />
           <div className="info">
             <div className="top">
               <div className="post">
-                <h1>{singlePostData.title}</h1>
+                <h1>{post.title}</h1>
                 <div className="address">
                   <img src="img/pin.png" alt="" />
-                  <span>{singlePostData.address}</span>
-                  <div className="price">{singlePostData.price}</div>
+                  <span>{post.address}</span>
+                  <div className="price">{post.price}</div>
                 </div>
               </div>
               <div className="user">
-                <img src={userData.img} alt="" />
-                <span>{userData.name}</span>
+                <img src={post.user.avatar} alt="" />
+                <span>{post.user.username}</span>
               </div>
             </div>
-            <div className="bottom">{singlePostData.description}</div>
+            <div className="bottom">{post.postDetail.description}</div>
           </div>
         </div>
       </div>
@@ -37,21 +40,29 @@ function SinglePage() {
               <img src="img/utility.png" alt="" />
               <div className="featureText">
                 <span>Utilities</span>
-                <p>Renter is responsible</p>
+                {post.postDetail.utilities === "owner" ? (
+                  <p>Owner is responsible </p>
+                ) : (
+                  <p>Tenant is responsible </p>
+                )}
               </div>
             </div>
             <div className="feature">
               <img src="img/pet.png" alt="" />
               <div className="featureText">
                 <span>Pet Policy</span>
-                <p>Pets Allowed</p>
+                {post.postDetail.pet === "allowed" ? (
+                  <p>Pets Allowed</p>
+                ) : (
+                  <p>Pets not Allowed</p>
+                )}
               </div>
             </div>
             <div className="feature">
               <img src="img/fee.png" alt="" />
               <div className="featureText">
-                <span>Property Fees</span>
-                <p>Must have 3x the rent in total household income</p>
+                <span>Income Policy</span>
+                <p>{post.postDetail.income}</p>
               </div>
             </div>
           </div>
@@ -59,20 +70,20 @@ function SinglePage() {
           <div className="sizes">
             <div className="size">
               <img src="img/size.png" alt="" />
-              <span>80sqft</span>
+              <span>{post.postDetail.size}sqft</span>
             </div>
 
             <div className="sizes">
               <div className="size">
                 <img src="img/bed.png" alt="" />
-                <span>2 beds</span>
+                <span>{post.bedroom} beds</span>
               </div>
             </div>
 
             <div className="sizes">
               <div className="size">
                 <img src="img/bath.png" alt="" />
-                <span>1 bathroom</span>
+                <span>{post.bathroom} bathroom</span>
               </div>
             </div>
           </div>
@@ -82,21 +93,26 @@ function SinglePage() {
               <img src="img/school.png" alt="" />
               <div className="featureText">
                 <span>School</span>
-                <p>250m away</p>
+                <p>
+                  {post.postDetail.school > 999
+                    ? post.postDetail.school / 1000 + "km"
+                    : post.postDetail.school + "m"}{" "}
+                  away
+                </p>
               </div>
             </div>
             <div className="feature">
               <img src="img/pet.png" alt="" />
               <div className="featureText">
                 <span>Bus Stop</span>
-                <p>100m away</p>
+                <p>{post.postDetail.bus}m away</p>
               </div>
             </div>
             <div className="feature">
               <img src="img/fee.png" alt="" />
               <div className="featureText">
                 <span>Restaurant</span>
-                <p>200m away</p>
+                <p>{post.postDetail.restaurant}m away</p>
               </div>
             </div>
           </div>
