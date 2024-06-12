@@ -105,19 +105,23 @@ export const updatePost = async (req, res) => {
 export const deletePost = async (req, res) => {
   const id = req.params.id;
   const tokenUserId = req.userId;
+
   try {
     const post = await prisma.post.findUnique({
       where: { id },
     });
+
     if (post.userId !== tokenUserId) {
-      return res.status(403).json({ message: "Not Authorized" });
+      return res.status(403).json({ message: "Not Authorized!" });
     }
 
-    await prisma.post.delete({ where: { id } });
-    res.status(200).json({ message: "post deleted" });
-  } catch (error) {
-    res.status(200).json();
-    console.log(error);
+    await prisma.post.delete({
+      where: { id },
+    });
+
+    res.status(200).json({ message: "Post deleted" });
+  } catch (err) {
+    console.log(err);
     res.status(500).json({ message: "Failed to delete post" });
   }
 };

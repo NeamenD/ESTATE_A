@@ -21,6 +21,6 @@ router.delete("/:id", verifyToken, deleteUser);
 
 router.post("/save", verifyToken, savePost);
 
-router.post("/profilePosts", verifyToken, profilePosts);
+router.get("/profilePosts", verifyToken, profilePosts);
 
 export default router;
