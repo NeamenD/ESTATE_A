@@ -11,19 +11,22 @@ export default function Navbar() {
   return (
     <nav>
       <div className="left">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <img src="img/GOJO-removebg-preview.png" alt="Logo" />
           {/* <span>GOJO</span> */}
-        </a>
-        <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
-        <a href="/">Agents</a>
+        </Link>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/agents">Agents</Link>
       </div>
       <div className="right">
         {currentUser ? (
           <div className="user">
-            <img src={currentUser.avatar || "/img/noavatar.jpg"} />
+            <img
+              src={currentUser.avatar || "/img/noavatar.jpg"}
+              alt="User Avatar"
+            />
             <span>{currentUser.username}</span>
             <Link to="/profile" className="profile">
               <div className="notification">3</div>
@@ -32,10 +35,10 @@ export default function Navbar() {
           </div>
         ) : (
           <>
-            <a href="/login">Sign in</a>
-            <a href="/register" className="register">
+            <Link to="/login">Sign in</Link>
+            <Link to="/register" className="register">
               Sign up
-            </a>
+            </Link>
           </>
         )}
         <div className="menuIcon">
@@ -47,12 +50,12 @@ export default function Navbar() {
         </div>
 
         <div className={open ? "menu active" : "menu"}>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/agents">Agents</Link>
+          <Link to="/login">Sign in</Link>
+          <Link to="/register">Sign up</Link>
         </div>
       </div>
     </nav>

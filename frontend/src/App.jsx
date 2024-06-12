@@ -8,6 +8,8 @@ import Register from "./routes/register/register.jsx";
 import Login from "./routes/login/login.jsx";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage.jsx";
 import NewPostPage from "./routes/newPostPage/newPostPage.jsx";
+import Agents from "./routes/Agents/Agents.jsx";
+
 import {
   listPageLoader,
   profilePageLoader,
@@ -43,6 +45,10 @@ function App() {
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/agents", // Add this route
+          element: <Agents />,
         },
       ],
     },
