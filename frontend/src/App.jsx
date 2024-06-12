@@ -16,6 +16,7 @@ import {
   singlePageLoader,
 } from "./lib/loaders.js";
 import ContactInfo from "./components/Contact/ContactInfo.jsx";
+import About from "./components/About/About.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -54,6 +55,10 @@ function App() {
         {
           path: "/contact-info",
           element: <ContactInfo />, // Add ContactInfo route
+        },
+        {
+          path: "/about",
+          element: <About />, // Add About route
         },
       ],
     },
