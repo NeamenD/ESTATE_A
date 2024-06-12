@@ -70,10 +70,6 @@ function profilePage() {
               {(postResponse) => <List posts={postResponse.data.savedPosts} />}
             </Await>
           </Suspense>
-
-          <div className="title">
-            <h1>Saved List</h1>
-          </div>
         </div>
       </div>
       <div className="chatContainer">
