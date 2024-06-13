@@ -14,7 +14,19 @@ function SinglePage() {
   const [saved, setSaved] = useState(post.isSaved);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const handleDelete = async (id) => {
+    try {
+      // Send delete request to the server
 
+      const response = await apiRequest
+        .delete(`/posts/${post.id}`, {})
+        .then((res) => {
+          navigate("/profile");
+        });
+    } catch (error) {
+      console.error("Error deleting the post:", error);
+    }
+  };
   const handleSave = async () => {
     if (!currentUser) {
       navigate("/login");
@@ -149,7 +161,10 @@ function SinglePage() {
               <img src="/img/chat.png" alt="" />
               Send a Message
             </button>
-
+            <button onClick={handleDelete}>
+              <img src="/img/trash.png" alt="" />
+              Delete
+            </button>
             <button
               onClick={handleSave}
               style={{

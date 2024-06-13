@@ -12,18 +12,21 @@ const agents = [
     name: "Sarah Johnson",
     image: "/Agents/path_to_Sarah_Johnson.jpg",
     description: "Experienced in residential real estate.",
+    phone: "(555) 123-4567",
   },
   {
     id: 2,
     name: "Michael Smith",
     image: "/Agents/Michael_Smith.jpg",
     description: "Expert in commercial properties.",
+    phone: "(987) 654-3210",
   },
   {
     id: 3,
     name: "Victoria Heath",
     image: "/Agents/victoria-heath.jpg",
     description: "Specializes in luxury homes.",
+    phone: "(123) 456-7890",
   },
   // Add more agents as needed
 ];
@@ -47,6 +50,7 @@ const Agents = () => {
               <img src={agent.image} alt={agent.name} />
               <h3>{agent.name}</h3>
               <p>{agent.description}</p>
+              <p className="phone">Phone:{agent.phone}</p>
             </div>
           </SwiperSlide>
         ))}
