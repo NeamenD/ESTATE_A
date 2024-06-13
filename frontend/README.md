@@ -1,6 +1,7 @@
 # RealEstateApp
 
 RealEstateApp is a single-page application built with React that allows users to browse, save, and manage property listings. Users can view detailed information about properties, including images, address, price, and more. Logged-in users can save properties to their profile and delete them as needed.
+https://estate-a.onrender.com/
 
 ## Features
 
@@ -28,5 +29,4 @@ RealEstateApp is a single-page application built with React that allows users to
    ## Dependencies
    React: JavaScript library for building user interfaces.
    React Router: Declarative routing for React.
-   DOMPurify: Sanitizer for HTML to prevent XSS attacks.
-   Axios: Promise-based HTTP client for the browser and Node.js
+   DOMPurify: Sanitizer for HTML
